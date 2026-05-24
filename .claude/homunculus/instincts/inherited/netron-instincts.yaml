@@ -1,0 +1,680 @@
+# Instincts generated from https://github.com/rdp77/netron
+# Generated: 2026-05-24T21:40:26.442Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: netron-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/rdp77/netron
+---
+
+# Netron Commit Length
+
+## Action
+
+Keep commit messages concise (~23 characters)
+
+## Evidence
+
+- Average commit message length: 23 chars
+- Based on 100 commits
+
+---
+id: netron-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/rdp77/netron
+---
+
+# Netron Naming Files
+
+## Action
+
+Use camelCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: camelCase
+
+---
+id: netron-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/rdp77/netron
+---
+
+# Netron Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: netron-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/rdp77/netron
+---
+
+# Netron Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: netron-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/rdp77/netron
+---
+
+# Netron Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: netron-test-framework
+trigger: "when writing tests"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/rdp77/netron
+---
+
+# Netron Test Framework
+
+## Action
+
+Use playwright as the test framework
+
+## Evidence
+
+- Test framework detected: playwright
+- File pattern: *.spec.js
+
+---
+id: netron-test-naming
+trigger: "when creating a test file"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/rdp77/netron
+---
+
+# Netron Test Naming
+
+## Action
+
+Name test files using the pattern: *.spec.js
+
+## Evidence
+
+- File pattern: *.spec.js
+- Consistent across test files
+
+---
+id: netron-test-types
+trigger: "when planning tests for a feature"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/rdp77/netron
+---
+
+# Netron Test Types
+
+## Action
+
+Write unit, e2e tests to match project standards
+
+## Evidence
+
+- Test types detected: unit, e2e
+- Coverage config: yes
+
+---
+id: netron-workflow-feature-development
+trigger: "when implementing a new feature"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/rdp77/netron
+---
+
+# Netron Workflow Feature Development
+
+## Action
+
+Follow the feature-development workflow:
+1. Add feature implementation
+2. Add tests for feature
+3. Update documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: **/*.test.*
+
+---
+id: netron-workflow-update-protobuf-schema-workflow
+trigger: "when doing update protobuf schema workflow"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/rdp77/netron
+---
+
+# Netron Workflow Update Protobuf Schema Workflow
+
+## Action
+
+Follow the update-protobuf-schema-workflow workflow:
+1. Edit one or more *-proto.js files in source/
+2. Edit corresponding implementation files (e.g., source/onnx.js, source/paddle.js, etc.)
+3. Edit or regenerate tools/protoc.js
+4. Edit source/protobuf.js
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: source/*-proto.js, source/*.js, tools/protoc.js
+
+---
+id: netron-workflow-update-flatbuffers-schema-workflow
+trigger: "when doing update flatbuffers schema workflow"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/rdp77/netron
+---
+
+# Netron Workflow Update Flatbuffers Schema Workflow
+
+## Action
+
+Follow the update-flatbuffers-schema-workflow workflow:
+1. Edit one or more *-schema.js files in source/
+2. Edit corresponding implementation files (e.g., source/circle.js, source/onnx.js, etc.)
+3. Edit or regenerate tools/flatc.js
+4. Edit source/flatbuffers.js
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: source/*-schema.js, source/*.js, tools/flatc.js
+
+---
+id: netron-workflow-add-model-test-file-workflow
+trigger: "when doing add model test file workflow"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/rdp77/netron
+---
+
+# Netron Workflow Add Model Test File Workflow
+
+## Action
+
+Follow the add-model-test-file-workflow workflow:
+1. Edit or create a source/*.js file for the model format
+2. Edit test/models.json to add the new test file
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: source/*.js, test/models.json
+
+---
+id: netron-workflow-update-metadata-json-workflow
+trigger: "when doing update metadata json workflow"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/rdp77/netron
+---
+
+# Netron Workflow Update Metadata Json Workflow
+
+## Action
+
+Follow the update-metadata-json-workflow workflow:
+1. Edit source/*-metadata.json
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: source/*-metadata.json
+
+---
+id: netron-workflow-bump-version-or-dependency-workflow
+trigger: "when doing bump version or dependency workflow"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/rdp77/netron
+---
+
+# Netron Workflow Bump Version Or Dependency Workflow
+
+## Action
+
+Follow the bump-version-or-dependency-workflow workflow:
+1. Edit package.json to update version or dependency
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: package.json
+
+---
+id: netron-workflow-single-file-feature-or-bugfix-workflow
+trigger: "when doing single file feature or bugfix workflow"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/rdp77/netron
+---
+
+# Netron Workflow Single File Feature Or Bugfix Workflow
+
+## Action
+
+Follow the single-file-feature-or-bugfix-workflow workflow:
+1. Edit a single source/*.js file
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~10x per month
+- Files: source/*.js
+
+---
+id: netron-instinct-file-naming-camelCase
+trigger: "When creating a new JavaScript source file"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: rdp77/netron
+---
+
+# Netron Instinct File Naming CamelCase
+
+## Action
+
+Name the file using camelCase (e.g., myFile.js)
+
+## Evidence
+
+- Pattern in files: source/view.js, source/flatbuffers.js, source/protobuf.js
+
+---
+id: netron-instinct-function-naming-camelCase
+trigger: "When defining a function"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: rdp77/netron
+---
+
+# Netron Instinct Function Naming CamelCase
+
+## Action
+
+Name the function using camelCase
+
+## Evidence
+
+- Pattern in source files
+- Naming conventions in codeStyle
+
+---
+id: netron-instinct-class-naming-PascalCase
+trigger: "When defining a class"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: rdp77/netron
+---
+
+# Netron Instinct Class Naming PascalCase
+
+## Action
+
+Name the class using PascalCase
+
+## Evidence
+
+- Pattern in codeStyle
+- Naming conventions for classes
+
+---
+id: netron-instinct-constant-naming-SCREAMING_SNAKE_CASE
+trigger: "When defining a constant"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: rdp77/netron
+---
+
+# Netron Instinct Constant Naming SCREAMING_SNAKE_CASE
+
+## Action
+
+Name the constant using SCREAMING_SNAKE_CASE
+
+## Evidence
+
+- Pattern in codeStyle
+- Naming conventions for constants
+
+---
+id: netron-instinct-relative-imports
+trigger: "When importing modules in JavaScript files"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: rdp77/netron
+---
+
+# Netron Instinct Relative Imports
+
+## Action
+
+Use relative import paths
+
+## Evidence
+
+- Pattern in codeStyle: importStyle is relative
+
+---
+id: netron-instinct-named-exports
+trigger: "When exporting functions or classes"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: rdp77/netron
+---
+
+# Netron Instinct Named Exports
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern in codeStyle: exportStyle is named
+
+---
+id: netron-instinct-test-file-pattern
+trigger: "When creating a new test file"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: rdp77/netron
+---
+
+# Netron Instinct Test File Pattern
+
+## Action
+
+Name the file with the pattern *.spec.js
+
+## Evidence
+
+- Pattern in testing: filePattern is *.spec.js
+
+---
+id: netron-instinct-playwright-tests
+trigger: "When writing tests"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: rdp77/netron
+---
+
+# Netron Instinct Playwright Tests
+
+## Action
+
+Use Playwright as the testing framework
+
+## Evidence
+
+- Pattern in testing: framework is playwright
+
+---
+id: netron-instinct-unit-and-e2e-tests
+trigger: "When writing tests for new features"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: rdp77/netron
+---
+
+# Netron Instinct Unit And E2e Tests
+
+## Action
+
+Include both unit and end-to-end tests where applicable
+
+## Evidence
+
+- Pattern in testing: testTypes include unit and e2e
+
+---
+id: netron-instinct-test-coverage-config
+trigger: "When configuring tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: rdp77/netron
+---
+
+# Netron Instinct Test Coverage Config
+
+## Action
+
+Ensure test coverage is configured
+
+## Evidence
+
+- Pattern in testing: coverageConfig is true
+
+---
+id: netron-instinct-git-commit-short-format
+trigger: "When writing a commit message"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: rdp77/netron
+---
+
+# Netron Instinct Git Commit Short Format
+
+## Action
+
+Use a short, descriptive message (average length ~23 chars), often starting with 'Update', 'Add', or 'Edit'
+
+## Evidence
+
+- Pattern in commits: Update view.js, Add RKNN test file (#639)
+
+---
+id: netron-instinct-git-single-file-commit
+trigger: "When making a small feature or bugfix"
+confidence: 0.8
+domain: git
+source: repo-analysis
+source_repo: rdp77/netron
+---
+
+# Netron Instinct Git Single File Commit
+
+## Action
+
+Commit changes to a single file with a message like 'Update [file].js'
+
+## Evidence
+
+- Pattern in commits: Update view.js, Update flatbuffers.js
+
+---
+id: netron-instinct-update-protobuf-schema-workflow
+trigger: "When someone updates or regenerates protobuf schemas for supported model formats"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: rdp77/netron
+---
+
+# Netron Instinct Update Protobuf Schema Workflow
+
+## Action
+
+Edit one or more *-proto.js files in source/, then update corresponding implementation files, tools/protoc.js, and source/protobuf.js
+
+## Evidence
+
+- Workflow: update-protobuf-schema-workflow
+- Example commit sequences in workflow
+
+---
+id: netron-instinct-update-flatbuffers-schema-workflow
+trigger: "When someone updates or regenerates flatbuffers schemas for supported model formats"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: rdp77/netron
+---
+
+# Netron Instinct Update Flatbuffers Schema Workflow
+
+## Action
+
+Edit one or more *-schema.js files in source/, then update corresponding implementation files, tools/flatc.js, and source/flatbuffers.js
+
+## Evidence
+
+- Workflow: update-flatbuffers-schema-workflow
+- Example commit sequences in workflow
+
+---
+id: netron-instinct-add-model-test-file-workflow
+trigger: "When someone adds support for a new model format or test case"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: rdp77/netron
+---
+
+# Netron Instinct Add Model Test File Workflow
+
+## Action
+
+Edit or create a source/*.js file for the model format, then update test/models.json to add the new test file
+
+## Evidence
+
+- Workflow: add-model-test-file-workflow
+- Example commit sequences in workflow
+
+---
+id: netron-instinct-update-metadata-json-workflow
+trigger: "When someone updates operator or model metadata for a format"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: rdp77/netron
+---
+
+# Netron Instinct Update Metadata Json Workflow
+
+## Action
+
+Edit source/*-metadata.json
+
+## Evidence
+
+- Workflow: update-metadata-json-workflow
+- Example commit sequences in workflow
+
+---
+id: netron-instinct-bump-version-or-dependency-workflow
+trigger: "When someone releases a new version or updates a dependency"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: rdp77/netron
+---
+
+# Netron Instinct Bump Version Or Dependency Workflow
+
+## Action
+
+Edit package.json to update version or dependency
+
+## Evidence
+
+- Workflow: bump-version-or-dependency-workflow
+- Example commit: Edit package.json to update version or dependency
+
+---
+id: netron-instinct-single-file-feature-or-bugfix-workflow
+trigger: "When someone fixes a bug or tweaks a feature in a specific file"
+confidence: 0.8
+domain: workflow
+source: repo-analysis
+source_repo: rdp77/netron
+---
+
+# Netron Instinct Single File Feature Or Bugfix Workflow
+
+## Action
+
+Edit a single source/*.js file
+
+## Evidence
+
+- Workflow: single-file-feature-or-bugfix-workflow
+- Example commit: Update pytorch.js (#543)
+
